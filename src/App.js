@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.scss';
+//import { useAlert } from 'react-alert';
 import carView from './images/car-view.JPG';
 import accessibility from './images/accessibility.JPG';
 
 function App() {
   return (
+  
     <div id="model3">
       <header className="screen">
         
@@ -29,8 +31,18 @@ function App() {
       </header>
 
       <div id="menu">
-        <div className="item car-info">🚘</div>
-        <div className="item music">🎵</div>
+        <div className="item car-info">
+          <button onClick={() => {
+            alert('Clicked!')
+          }}>🚘
+          </button>
+        </div>
+        <div className="item music">
+          <button onClick={() =>{
+            alert('Clicked!')
+          }}>🎵
+          </button>
+        </div>
         <div className="item expand-menu">📦</div>
         <div className="item driver-seat">🇲🇪</div>
         <div className="item ac-icon">💨</div>
@@ -42,6 +54,8 @@ function App() {
       </div>
     </div>
   );
+
+    
 }
 
 export default App;
