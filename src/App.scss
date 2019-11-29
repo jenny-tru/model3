@@ -20,8 +20,10 @@ body {
 }
 
 .screen {
+  grid-row: 1 / 2;
   display: grid;
   grid-template-columns: 35% 75%;
+  grid-template-rows: 100%;
   border-radius: 1rem;
   overflow: hidden;
 
@@ -61,6 +63,8 @@ body {
 
 .map {
   background: white;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 #menu {
@@ -97,9 +101,49 @@ body {
 
 .speed-number {
   display: block;
-  height: 100px;
-  width: 100px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
   font-size: 100%;
   border: 3px solid gray;
+}
+
+.view-container {
+  display: grid;
+  grid-column: 2 / 3; // 1 | 2 | 3
+  grid-row: 1 / 2;
+  padding: 0 1rem;
+  align-items: end;
+}
+
+.view {
+  padding: 1rem;
+  background: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  z-index: 1;
+  grid-row: 1 / -1; // top to bottom inside of view-container
+  grid-column: 1 / -1; // left to right inside of view-container
+
+  transition: transform 0.3s; // property, duration
+
+  // transform:
+  // - translate (x/y)
+  // - rotate
+  // - scale (x/y)
+  // - skew / /  \ \
+
+  // if it has that data-active attribute (if it's on the element... <div data-active="whatever">)
+  &[data-active] {
+    transform: none;
+  }
+
+  // hide!
+  &:not([data-active]) {
+    transform: translateY(100% /* of its own height */); // vertical
+  }
+
+  &[data-status="full"] {
+    height: 80%;
+  }
 }

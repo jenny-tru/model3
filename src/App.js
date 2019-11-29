@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 //import { useAlert } from 'react-alert';
+import { MusicView } from './MusicView';
 import carView from './images/car-view.JPG';
 import accessibility from './images/accessibility.JPG';
 
 function App() {
+  const [view, setView] = useState('map'); // or 'settings'
+
   return (
-  
     <div id="model3">
       <header className="screen">
-        
+        {/* this is where the view will go... if we HAD ONE */}
+        <div className="view-container">
+          <div className="view" data-active={view === 'settings' || undefined}>
+            <h1>Settings!</h1>
+          </div>
+          <MusicView active={view === 'music'}/>
+        </div>
         <div className="drive-view">
           <div className="speed">
 
-            <h1 className="speed-number">70 <br /> mph</h1>
+            <h1 className="speed-number">70 <br />mph</h1>
           </div>
           <div className="prndl">
           <h2>P R N D</h2>
@@ -36,13 +44,13 @@ function App() {
       <div id="menu">
         <div className="item car-info">
           <button onClick={() => {
-            alert('Clicked!')
+            setView('settings')
           }}>🚘
           </button>
         </div>
         <div className="item music">
           <button onClick={() =>{
-            alert('Clicked!')
+           setView('music')
           }}>🎵
           </button>
         </div>
