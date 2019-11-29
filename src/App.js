@@ -11,7 +11,10 @@ function App() {
       <header className="screen">
         
         <div className="drive-view">
-          <h1>70 <br /> mph</h1>
+          <div className="speed">
+
+            <h1 className="speed-number">70 <br /> mph</h1>
+          </div>
           <div className="prndl">
           <h2>P R N D</h2>
           </div>

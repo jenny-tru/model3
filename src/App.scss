@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -23,26 +24,17 @@ html, body {
   grid-template-columns: 35% 75%;
   border-radius: 1rem;
   overflow: hidden;
-  
+
   > .drive-view {
     grid-column: 1 / 2;
     text-align: center;
     text-emphasis: bold;
-    h1 {
-      border: 3px solid gray;
-      width: fit-content;
-      // text-align: center;
-      border-radius: 50%;
-      
-        }
-    
   }
-  
+
   > .map {
     grid-column: 2 / 3;
   }
 }
-
 
 .drive-view {
   box-shadow: 1rem 0 2rem rgba(black, 0.1);
@@ -50,23 +42,22 @@ html, body {
   grid-template-rows: 14% 6% 60% 20%;
   z-index: 1;
   background-color: rgba(224, 215, 215, 0.966);
- 
+
   > .prndl {
     text-align: left;
     font-family: sans-serif;
   }
 
-  > .car-view > img{
+  > .car-view > img {
     height: 100%;
-    width:100%;
+    width: 100%;
   }
 
-  > .accessibility > img{
+  > .accessibility > img {
     height: 100%;
-    width:100%;
+    width: 100%;
   }
 }
-
 
 .map {
   background: white;
@@ -79,21 +70,36 @@ html, body {
   align-items: center;
 
   .item {
-    
     border: 1px solid rgba(255, 255, 255, 0.267);
     height: 4rem;
     width: 5rem;
     text-align: center;
-    color:white;
-    font-size: 200%;
+    color: white;
 
+    // how to center vertically + horizontally with flexbox!
+    display: flex;
+    justify-content: center; // ---x---
+    align-items: center; // vertical
 
-  
-  .button {
-    appearance: none;
-    border: none;
-    background: none;
+    button {
+      font-size: 200%;
+      appearance: none;
+      border: none;
+      background: none;
+    }
   }
 }
 
+.speed {
+  display: flex;
+  justify-content: center;
+}
+
+.speed-number {
+  display: block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  font-size: 100%;
+  border: 3px solid gray;
 }
