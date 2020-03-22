@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.scss";
 import { MusicView } from "./MusicView";
+import { acView } from "./acView";
 import carView from "./images/car-view.JPG";
 import accessibility from "./images/accessibility.JPG";
 
@@ -16,6 +17,7 @@ function App() {
             <h1>Car Settings</h1>
           </div>
           <MusicView active={view === "music"} />
+          <acView active={view === "ac"} />
         </div>
         <div className="drive-view">
           <div className="speed">
