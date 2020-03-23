@@ -32,7 +32,7 @@ function showAir(state, event) {
 }
 
 // active is true or false
-export function acView({ active }) {
+/* export function acView({ active }) {
     const [state, dispatch] = useReducer(showAir, initialState);
 
     console.log(state); // { status: 'half' }
@@ -46,7 +46,7 @@ export function acView({ active }) {
                 // we don't care about the event
                 dispatch({ type: 'CLICK' })
             }}>
-            <h1>Music</h1>
+            <h1>AC View</h1>
         </div>
     )
-}
+} */
