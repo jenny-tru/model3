@@ -31,7 +31,7 @@ function showAir(state, event) {
 
 }
 
-// active is true or false
+
 /* export function acView({ active }) {
     const [state, dispatch] = useReducer(showAir, initialState);
 

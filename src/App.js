@@ -17,7 +17,7 @@ function App() {
             <h1>Car Settings</h1>
           </div>
           <MusicView active={view === "music"} />
-          <acView active={view === "ac"} />
+          {/* <acView active={view === "ac"} /> */}
         </div>
         <div className="drive-view">
           <div className="speed">
