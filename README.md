@@ -1,4 +1,6 @@
-Want to see what it's like when inside a Tesla Model 3? 
+Want to see what it's like sitting inside a Tesla Model 3? 
+Here's a sneek peak of how fun it is navigating around the UI as a driver or passenger.
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
