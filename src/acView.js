@@ -1,22 +1,26 @@
-import React, { useReducer } from 'react';
+import React, {useReducer} from 'react';
 
 const machine = {
-  initial: 'half',
-  states: {
-    half: {
-      on: {
-        CLICK: 'full'
-      }
-    },
-    full: {
-      on: {
-        CLICK: 'half'
-      }
+    initial: 'half',
+    states: {
+        half: {
+            on: {
+                CLICK: 'full'
+            }
+        },
+        full: {
+            on: {
+                CLICK: 'half'
+            }
+        }
     }
-  }
 }
 
-function musicReducer(state, event) { // { type: 'CLICK' }
+const initialState = {
+    status: machine.initial
+}
+
+function acReducer(state, event) { // { type: 'CLICK' }
     return {
         ...state,
         status: machine
@@ -24,3 +28,23 @@ function musicReducer(state, event) { // { type: 'CLICK' }
             .on[event.type] // what is the next status
             || state.status
     }
+}
+
+// active is true or false
+export function acView({ active }) {
+    const [state, dispatch] = useReducer(acReducer, initialState);
+
+    console.log(state); // { status: 'half' }
+
+    return (
+        <div
+            className="view"
+            data-active={active || undefined}
+            data-status={state.status}
+            onClick={(event) => {
+                dispatch({ type: 'CLICK' })
+            }}>
+            <h1>Air Controls</h1>
+        </div>
+    )
+}

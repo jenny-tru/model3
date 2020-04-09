@@ -89,6 +89,7 @@ function App() {
           >
             💨
           </button>
+          <acView active={view === "ac"} />
         </div>
         <div className="item temperature">
           <button
