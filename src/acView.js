@@ -30,7 +30,7 @@ function acReducer(state, event) { // { type: 'CLICK' }
     }
 }
 
-// active is true or false
+
 export function acView({ active }) {
     const [state, dispatch] = useReducer(acReducer, initialState);
 
