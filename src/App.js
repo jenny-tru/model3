@@ -4,6 +4,7 @@ import { MusicView } from "./MusicView";
 import { AirCondView } from "./acView";
 import carView from "./images/car-view.JPG";
 import accessibility from "./images/accessibility.JPG";
+import { SettingsView } from "./SettingsView";
 
 //this updates the screen view
 function viewReducer(state, event) {
@@ -24,6 +25,7 @@ function viewReducer(state, event) {
   }
 }
 
+
 function App() {
   // const [view, setView] = useState("map"); // or 'settings'
   const [state, dispatch] = useReducer(viewReducer, { view: null });
@@ -37,9 +39,7 @@ function App() {
       <header className="screen">
         {/* this is where the view will go... if we HAD ONE */}
         <div className="view-container">
-          <div className="view" data-active={view === "settings" || undefined}>
-            <h1>Car Settings</h1>
-          </div>
+          <SettingsView active={ view === 'settings'}/>
           <MusicView active={view === "music"} />
           <AirCondView active={view === "ac"} /> 
         </div>
