@@ -22,7 +22,11 @@ function viewReducer(state, event) {
     case 'update': 
       return {
         ...state,
-        view: event.view
+        // we can add logic so that if event.view === state.view... 
+        // we should hide everything
+        // (some expression) ? (this if true) : (that if false)
+        view: event.view === state.view ? null : event.view
+
       }
 
     // don't forget default!
@@ -32,10 +36,14 @@ function viewReducer(state, event) {
 }
 
 
-function App() {
-  const [view, setView] = useState("map"); // or 'settings'
-  const [state, dispatch] = useReducer(viewReducer, { view: null});
 
+function App() {
+  // const [view, setView] = useState("map"); // or 'settings'
+  const [state, dispatch] = useReducer(viewReducer, { view: null });
+  // console.log(state)
+  // => { view: null } or... { view: 'map' } or... { view: 'whatever' }
+
+  const view = state.view
 
   return (
     <div id="model3">
