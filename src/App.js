@@ -1,12 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import "./App.scss";
 import { MusicView } from "./MusicView";
 import { AirCondView } from "./acView";
 import carView from "./images/car-view.JPG";
 import accessibility from "./images/accessibility.JPG";
 
+
+
+// state - { view: null }
+
+// event - { type: 'update', view: 'music' }
+// RETURN state - { view: 'music' }
+
+// event - { type: 'update', view: 'ac' }
+// RETURN state - { view: 'ac' }
+
+// event - { type: 'update', view: 'ac' }
+// RETURN state - { view: null }
+function viewReducer(state, event) {
+  switch (event.type) {
+    case 'update': 
+      return {
+        ...state,
+        view: event.view
+      }
+
+    // don't forget default!
+    default:
+      return state
+  }
+}
+
+
 function App() {
   const [view, setView] = useState("map"); // or 'settings'
+  const [state, dispatch] = useReducer(viewReducer, { view: null});
+
 
   return (
     <div id="model3">
@@ -48,7 +77,8 @@ function App() {
         <div className="item car-info">
           <button
             onClick={() => {
-              setView("settings");
+              // dispatch({ type: 'update', view: "settings"});
+              dispatch({ type: 'update', view: 'settings' })
             }}
           >
             🚘
@@ -57,7 +87,7 @@ function App() {
         <div className="item music">
           <button
             onClick={() => {
-              setView("music");
+              dispatch({ type: 'update', view: "music"});
             }}
           >
             🎵
@@ -66,7 +96,7 @@ function App() {
         <div className="item extras">
           <button
             onClick={() => {
-              setView("extras");
+              dispatch({ type: 'update', view: "extras"});
             }}
           >
             📦
@@ -75,7 +105,7 @@ function App() {
         <div className="item driver-seat">
           <button
             onClick={() => {
-              setView("driver");
+              dispatch({ type: 'update', view: "driver"});
             }}
           >
             🧍
@@ -84,7 +114,7 @@ function App() {
         <div className="item ac-icon">
           <button
             onClick={() => {
-              setView("ac");
+              dispatch({ type: 'update', view: "ac"});
             }}
           >
             💨
@@ -93,7 +123,7 @@ function App() {
         <div className="item temperature">
           <button
             onClick={() => {
-              setView("temperature");
+              dispatch({ type: 'update', view: "temperature"});
             }}
           >
             🌡️
@@ -102,7 +132,7 @@ function App() {
         <div className="item passenger-seat">
           <button
             onClick={() => {
-              setView("passenger");
+              dispatch({ type: 'update', view: "passenger"});
             }}
           >
             🧑‍🤝‍🧑
@@ -111,7 +141,7 @@ function App() {
         <div className="item front-window">
           <button
             onClick={() => {
-              setView("passenger");
+              dispatch({ type: 'update', view: "passenger"});
             }}
           >
             🔼
@@ -120,7 +150,7 @@ function App() {
         <div className="item back-window">
           <button
             onClick={() => {
-              setView("passenger");
+              dispatch({ type: 'update', view: "passenger"});
             }}
           >
             🔙
@@ -129,7 +159,7 @@ function App() {
         <div className="item volume">
           <button
             onClick={() => {
-              setView("passenger");
+              dispatch({ type: 'update', view: "passenger"});
             }}
           >
             🔊
