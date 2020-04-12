@@ -5,18 +5,7 @@ import { AirCondView } from "./acView";
 import carView from "./images/car-view.JPG";
 import accessibility from "./images/accessibility.JPG";
 
-
-
-// state - { view: null }
-
-// event - { type: 'update', view: 'music' }
-// RETURN state - { view: 'music' }
-
-// event - { type: 'update', view: 'ac' }
-// RETURN state - { view: 'ac' }
-
-// event - { type: 'update', view: 'ac' }
-// RETURN state - { view: null }
+//this updates the screen view
 function viewReducer(state, event) {
   switch (event.type) {
     case 'update': 
@@ -34,8 +23,6 @@ function viewReducer(state, event) {
       return state
   }
 }
-
-
 
 function App() {
   // const [view, setView] = useState("map"); // or 'settings'
