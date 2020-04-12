@@ -1,49 +1,35 @@
 import React, {useReducer} from 'react';
+import { createMachine } from 'xstate';
+import { useMachine } from '@xstate/react';
 
-const machine = {
-    initial: 'half',
-    states: {
-        half: {
-            on: {
-                CLICK: 'full'
-            }
-        },
-        full: {
-            on: {
-                CLICK: 'half'
-            }
-        }
-    }
-}
-
-const initialState = {
-    status: machine.initial
-}
-
-function acReducer(state, event) { // { type: 'CLICK' }
-    return {
-        ...state,
-        status: machine
-            .states[state.status] // what is the current status
-            .on[event.type] // what is the next status
-            || state.status
-    }
-}
+// const acMachine = createMachine({
+//     // replace full with open... everywhere
+//     initial: 'open',
+//     states: {
+//         open: {
+//             on:{
+//                 CLICK: 'hidden'
+//             }
+//             // do the same thing here
+//         },
+//         // let's add another state
+//         hidden: {
+//             on: {
+//                 CLICK: 'open'
+//             }
+//         }
+//     }
+// })
 
 
-export function acView({ active }) {
-    const [state, dispatch] = useReducer(acReducer, initialState);
-
-    console.log(state); // { status: 'half' }
-
+// active (in our case) means...
+// it's the only active view
+// and we don't control that
+export function AirCondView({ active }) {
     return (
         <div
             className="view"
-            data-active={active || undefined}
-            data-status={state.status}
-            onClick={(event) => {
-                dispatch({ type: 'CLICK' })
-            }}>
+            data-active={active || undefined}>
             <h1>Air Controls</h1>
         </div>
     )

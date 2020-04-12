@@ -146,4 +146,12 @@ body {
   &[data-status="full"] {
     height: 80%;
   }
+
+  &[data-status="open"] {
+    transform: none;
+  }
+
+  &[data-status="hidden"] {
+    transform: translateY(100%);
+  }
 }
