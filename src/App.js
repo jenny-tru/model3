@@ -37,8 +37,8 @@ function App() {
   return (
     <div id="model3">
       <header className="screen">
-        {/* this is where the view will go... if we HAD ONE */}
         <div className="view-container">
+          {/* this is where all the views go */}
           <SettingsView active={ view === 'settings'}/>
           <MusicView active={view === "music"} />
           <AirCondView active={view === "ac"} /> 
@@ -46,7 +46,7 @@ function App() {
         <div className="drive-view">
           <div className="speed">
             <h1 className="speed-number">
-              70 <br />
+              75 <br />
               mph
             </h1>
           </div>
@@ -72,7 +72,6 @@ function App() {
         <div className="item car-info">
           <button
             onClick={() => {
-              // dispatch({ type: 'update', view: "settings"});
               dispatch({ type: 'update', view: 'settings' })
             }}
           >
