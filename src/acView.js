@@ -30,7 +30,7 @@ export function AirCondView({ active }) {
         <div
             className="view"
             data-active={active || undefined}>
-            <h1>Air Controls</h1>
+            <h1>AC</h1>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from "react";
 import "./App.scss";
 import { MusicView } from "./MusicView";
+import { ExtrasView } from "./extrasView";
 import { AirCondView } from "./acView";
 import carView from "./images/car-view.JPG";
 import accessibility from "./images/accessibility.JPG";
@@ -27,11 +28,7 @@ function viewReducer(state, event) {
 
 
 function App() {
-  // const [view, setView] = useState("map"); // or 'settings'
   const [state, dispatch] = useReducer(viewReducer, { view: null });
-  // console.log(state)
-  // => { view: null } or... { view: 'map' } or... { view: 'whatever' }
-
   const view = state.view
 
   return (
@@ -41,6 +38,7 @@ function App() {
         <div className="view-container">
           <SettingsView active={ view === 'settings'}/>
           <MusicView active={view === "music"} />
+          <ExtrasView active={view === "extras"} />
           <AirCondView active={view === "ac"} /> 
         </div>
         <div className="drive-view">
