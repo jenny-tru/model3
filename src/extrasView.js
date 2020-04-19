@@ -1,5 +1,5 @@
 import React, {useReducer} from 'react'
-import { createMAchine } from 'xstate'
+import {createMAchine} from 'xstate'
 import {useMachine} from '@xstate/react'
 
 export function ExtrasView({ active }) {
