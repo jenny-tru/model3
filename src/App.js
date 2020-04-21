@@ -20,7 +20,6 @@ function viewReducer(state, event) {
 
       }
 
-    // don't forget default!
     default:
       return state
   }
