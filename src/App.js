@@ -13,9 +13,6 @@ function viewReducer(state, event) {
     case 'update': 
       return {
         ...state,
-        // we can add logic so that if event.view === state.view... 
-        // we should hide everything
-        // (some expression) ? (this if true) : (that if false)
         view: event.view === state.view ? null : event.view
 
       }
