@@ -43,7 +43,6 @@ export function MusicView({ active }) {
       data-active={active || undefined}
       data-status={state.status}
       onClick={(event) => {
-        // we don't care about the event
         dispatch({ type: 'CLICK' })
       }}>
       <h1>Music</h1>
