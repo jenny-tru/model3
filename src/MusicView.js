@@ -31,11 +31,9 @@ function musicReducer(state, event) { // { type: 'CLICK' }
   }
 }
 
-// active is true or false
 export function MusicView({ active }) {
   const [state, dispatch] = useReducer(musicReducer, initialState);
-
-  console.log(state); // { status: 'half' }
+  console.log(state);
 
   return (
     <div

@@ -22,7 +22,6 @@ function viewReducer(state, event) {
   }
 }
 
-
 function App() {
   const [state, dispatch] = useReducer(viewReducer, { view: null });
   const view = state.view
