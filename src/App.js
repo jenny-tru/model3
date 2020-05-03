@@ -1,11 +1,12 @@
 import React, { useState, useReducer } from "react";
 import "./App.scss";
+import { SettingsView } from "./SettingsView";
 import { MusicView } from "./MusicView";
 import { ExtrasView } from "./extrasView";
 import { AirCondView } from "./acView";
 import carView from "./images/car-view.JPG";
 import accessibility from "./images/accessibility.JPG";
-import { SettingsView } from "./SettingsView";
+
 
 //this updates the screen view
 function viewReducer(state, event) {
@@ -14,7 +15,6 @@ function viewReducer(state, event) {
       return {
         ...state,
         view: event.view === state.view ? null : event.view
-
       }
 
     default:
@@ -30,7 +30,7 @@ function App() {
     <div id="model3">
       <header className="screen">
         <div className="view-container">
-          {/* this is where all the views go */}
+          {/* this is where all the seperate window views go */}
           <SettingsView active={ view === 'settings'}/>
           <MusicView active={view === "music"} />
           <ExtrasView active={view === "extras"} />
@@ -39,7 +39,7 @@ function App() {
         <div className="drive-view">
           <div className="speed">
             <h1 className="speed-number">
-              75 <br />
+              74 <br />
               mph
             </h1>
           </div>
