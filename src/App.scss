@@ -74,7 +74,7 @@ body {
   align-items: center;
 
   .item {
-    border: 1px solid rgba(255, 255, 255, 0.267);
+    // border: 1px solid rgba(255, 255, 255, 0.267);
     height: 4rem;
     width: 5rem;
     text-align: center;
@@ -124,14 +124,7 @@ body {
   z-index: 1;
   grid-row: 1 / -1; // top to bottom inside of view-container
   grid-column: 1 / -1; // left to right inside of view-container
-
   transition: transform 0.3s; // property, duration
-
-  // transform:
-  // - translate (x/y)
-  // - rotate
-  // - scale (x/y)
-  // - skew / /  \ \
 
   // if it has that data-active attribute (if it's on the element... <div data-active="whatever">)
   &[data-active] {
