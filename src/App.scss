@@ -28,6 +28,7 @@ body {
   overflow: hidden;
 
   > .drive-view {
+    //use align-self for grid 
     grid-column: 1 / 2;
     text-align: center;
     text-emphasis: bold;
@@ -83,7 +84,7 @@ body {
     // how to center vertically + horizontally with flexbox!
     display: flex;
     justify-content: center; // ---x---
-    align-items: center; // vertical
+    align-items: center; //perpendicularly aligns content
 
     button {
       font-size: 200%;
